@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/showpage.css">
+</head>
+<body>
+    <h1>Your Blogs</h1>
+    <% if(blog.length>0){%>
+        <% blog.forEach(function(txt){%>
+            <div id="blogs">
+                <%= txt.post.substring(0, 15)+"..." %>
+                <br><br>
+                <a href="/read/<%=txt._id%>">Show more</a>
+                <a href="/delete/<%=txt._id%>">Delete</a>
+                <a href="/update/<%=txt._id%>">Update</a>
+            </div>
+        <%})%>
+    <%} else{%>
+        <h1>No blogs yet</h1>
+    <%}%>
+
+</body>
+</html>
